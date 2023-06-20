@@ -1,4 +1,6 @@
 @use "./../utils" as *;
+
+
 // button
 .button {
   font-size: 14px;
@@ -7,14 +9,53 @@
   border: 0;
   border-radius: 5px;
   background: transparent;
-  
+
   &--fill {
     background: $light-brown;
     color: white;
   }
+
   &--outline {
     color: $light-brown;
     border: 2px solid currentColor;
   }
 
+  //햄버거 버튼
+  &--burger {
+    @include desktop {
+      display: none;
+    }
+
+    @include mobile{
+      background: blue;
+      width: rem(36px);
+      height: rem(36px);
+      border: 0;
+      padding: 0;
+      position: relative;
+
+      &BarTop, &BarMiddle, &BarBottom{
+        background: $white;
+        width: 100%;
+        height: 20%;
+        border-radius: 10px;
+        @include pos;
+        top: rem(65px);
+        left: rem(20px);
+      }
+
+      &BarTop{
+        @include posTopLeft;
+      }
+      
+      &BarMiddle{
+        @include posCenterY;
+      }
+
+      &BarBottom{
+        @include posBottomY;
+      }
+      
+    }
+  }
 }

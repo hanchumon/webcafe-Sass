@@ -316,7 +316,7 @@ iframe{
 @media screen and (min-width: 320px) and (max-width: 767px) {
   /* 모바일 메인 메뉴 제어 버튼 */
   .button--burger span{
-    transition: all 200ms;
+
   }
 
   .button--burger.is-active .button--burgerBarTop{

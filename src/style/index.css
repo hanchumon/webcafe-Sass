@@ -397,6 +397,46 @@ legend {
   color: #c7b39a;
   border: 2px solid currentColor;
 }
+@media (min-width: 768px) {
+  .button--burger {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .button--burger {
+    background: blue;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 0;
+    padding: 0;
+    position: relative;
+  }
+  .button--burgerBarTop, .button--burgerBarMiddle, .button--burgerBarBottom {
+    background: #ffffff;
+    width: 100%;
+    height: 20%;
+    border-radius: 10px;
+    position: absolute;
+    top: 4.0625rem;
+    left: 1.25rem;
+  }
+  .button--burgerBarTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .button--burgerBarMiddle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .button--burgerBarBottom {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 
 .appHeader {
   background: yellow;

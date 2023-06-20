@@ -1,19 +1,53 @@
 @use "./unit" as *;
 @use "./media-query" as *;
 
-
-
-@mixin posCenterY{
+//position mixin
+@mixin pos{
   position: absolute;
+}
+
+@mixin posTopLeft($t: 0, $l: 0){
+  @include pos;
+  top: $t;
+  left: $l;
+}
+
+@mixin posTopRight($t: 0, $r: 0){
+  @include pos;
+  top: $t;
+  right: $r;
+
+}
+@mixin posBottomY{
+  @include pos;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin posCenterX{
+  @include pos;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin posCenterY{
+  @include pos;
   top: 50%;
   transform: translateY(-50%);
 }
+@mixin posCenter{
+  @include pos;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  transform: translateY(-50%);
+}
 
+//padding mixin
 @mixin padding($spacing){
   @include paddingX;
   @include paddingY;
 }
-
 @mixin paddingX($spacing){
   padding-left: rem($spacing);
   padding-right: rem($spacing);
@@ -24,6 +58,7 @@
   padding-bottom: rem($spacing);
 }
 
+//margin mixin
 @mixin margin($spacing){
   @include marginX;
   @include marginY;
