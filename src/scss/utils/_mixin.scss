@@ -18,30 +18,31 @@
   right: $r;
 
 }
-@mixin posBottomY{
+@mixin posCenterX {
   @include pos;
-  top: 100%;
   left: 50%;
   transform: translateX(-50%);
 }
 
-@mixin posCenterX{
-  @include pos;
-  left: 50%;
-  transform: translateX(-50%);
-}
-@mixin posCenterY{
+@mixin posCenterY {
   @include pos;
   top: 50%;
   transform: translateY(-50%);
 }
-@mixin posCenter{
+
+@mixin posBottomY {
   @include pos;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-  transform: translateY(-50%);
+  top: 100%;
+  transform: translateY(-100%);
 }
+
+@mixin posCenter {
+  @include pos;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 //padding mixin
 @mixin padding($spacing){
