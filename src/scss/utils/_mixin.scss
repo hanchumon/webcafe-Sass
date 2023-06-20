@@ -1,1 +1,50 @@
-// mixin.scss
+@use "./unit" as *;
+@use "./media-query" as *;
+
+
+
+@mixin posCenterY{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin padding($spacing){
+  @include paddingX;
+  @include paddingY;
+}
+
+@mixin paddingX($spacing){
+  padding-left: rem($spacing);
+  padding-right: rem($spacing);
+}
+
+@mixin paddingY($spacing){
+  padding-top: rem($spacing);
+  padding-bottom: rem($spacing);
+}
+
+@mixin margin($spacing){
+  @include marginX;
+  @include marginY;
+}
+
+@mixin marginX($spacing){
+  padding-left: rem($spacing);
+  padding-right: rem($spacing);
+}
+
+@mixin marginY($spacing){
+  padding-top: rem($spacing);
+  padding-bottom: rem($spacing);
+}
+
+@mixin containerMax($max-width: 1024px){
+  max-width: rem($max-width);
+  @include autoMargin;
+}
+
+@mixin autoMargin{
+  margin-left: auto;
+  margin-right: auto;
+}
