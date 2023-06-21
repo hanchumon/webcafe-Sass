@@ -100,7 +100,7 @@
 
 //ratio mixin
 @mixin ratio($w: 16,$h: 9){
-  aspect-ratio: $w/$h;
+  aspect-ratio: $w / $h;
 }
 
 // 반응형 콘텐츠

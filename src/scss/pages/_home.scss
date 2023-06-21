@@ -1,11 +1,13 @@
 // home.scss
 @use "../utils/" as *;
-@use "math"
 
 .appMain {
   display: grid;
   @include paddingX(20px);
   @include paddingY(16px);
+  [class*=title]{
+    margin-bottom: rem(16px);
+  }
 
   @include mobile {
     // grid-template-columns: 100%;
