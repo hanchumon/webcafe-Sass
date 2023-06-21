@@ -1,5 +1,6 @@
 // home.scss
 @use "../utils/" as *;
+@use "math"
 
 .appMain {
   display: grid;
@@ -25,7 +26,6 @@
       "book book book book twitter twitter twitter twitter twitter favorite favorite favorite"
       "book book book book . board board board board board board board";
   }
-
 }
 
 //메인 콘텐츠(데스크탑에만 적용)
@@ -55,4 +55,94 @@
   .twitter {
     grid-area: twitter;
   }
+}
+
+//추천 서적
+.book {
+  &__cover {
+    text-align: center;
+    width: 70%;
+    @include autoMargin;
+
+    &Image {
+      margin-bottom: rem(20px);
+    }
+  }
+
+  &__info {
+    @include flexbox($wrap: wrap, $justify: center);
+    column-gap: rem(8px);
+    @include marginY(20px);
+  }
+
+  @at-root .ratingStar {
+    width: 100%;
+    text-align: center;
+    font-size: rem(30px);
+  }
+}
+
+//새소식
+.news {
+  @at-root .iframeWrapper {
+    @include ratio;
+    margin-bottom: rem(20px);
+  }
+
+  &__date {
+    display: block;
+    text-align: right;
+  }
+}
+
+//게시판
+.board {
+  position: relative;
+  &__item {
+    @include flexbox;
+    @include marginY(4px);
+    column-gap: rem(8px);
+  }
+  &__link{
+    flex-grow: 1;
+    @include textOver;
+  }
+  
+  &__date {
+    white-space: nowrap;
+    // flex-shrink: 0;
+  }
+
+  &__more{
+    @include posTopRight
+  }
+}
+
+//인기사이트
+
+//트위터
+
+.twitter{
+  &__userInfo{
+    display: inline-flex;
+  }
+  &__userProfile{
+    @include ratio(1,1);
+    width: rem(70px);
+    float: right;
+    
+    & img{
+      border-radius: 50%;
+      @include response(width, 100%);
+      @include fit;
+    }
+  }
+  &__date{
+    display: block;
+    text-align: right;
+  }
+}
+//아이콘 간격
+.far{
+  margin-right: rem(4px);
 }
